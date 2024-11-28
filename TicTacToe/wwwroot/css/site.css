@@ -1,0 +1,18 @@
+.cell {
+    height: 80px;
+    width: 80px;
+    font-size: 20px;
+} 
+
+a {
+    font-size: 20px;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+} 

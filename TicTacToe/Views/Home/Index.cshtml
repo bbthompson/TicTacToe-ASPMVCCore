@@ -1,0 +1,46 @@
+﻿@model TicTacToeModel
+<form method="post">
+    @{
+        if (Model.GameOver)
+        {
+            <h2 class="text-center bg-success text-white p-2">@Model.GameOverMessage</h2>    
+            <a class="text-center text-primary d-block fw-bold" asp-action="NewGame">New Game</a>
+        }
+        else
+        {
+
+            <h2 class="text-center p-3">@Model.Player's Turn</h2>
+        }
+    }
+
+    <input type="text" hidden name="Player" value="@Model.Player" />
+    <input type="text" hidden name="Cells[0]" value="@Model.Cells[0]" />
+    <input type="text" hidden name="Cells[1]" value="@Model.Cells[1]" />
+    <input type="text" hidden name="Cells[2]" value="@Model.Cells[2]" /> 
+    <input type="text" hidden name="Cells[3]" value="@Model.Cells[3]" />
+    <input type="text" hidden name="Cells[4]" value="@Model.Cells[4]" />
+    <input type="text" hidden name="Cells[5]" value="@Model.Cells[5]" />
+    <input type="text" hidden name="Cells[6]" value="@Model.Cells[6]" />
+    <input type="text" hidden name="Cells[7]" value="@Model.Cells[7]" />
+    <input type="text" hidden name="Cells[8]" value="@Model.Cells[8]" />
+
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <button disabled=@((Model.Cells[0] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="0" class="m-1 cell">@Model.Cells[0]</button>
+            <button disabled=@((Model.Cells[1] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="1" class="m-1 cell">@Model.Cells[1]</button>
+            <button disabled=@((Model.Cells[2] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="2" class="m-1 cell">@Model.Cells[2]</button>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <button disabled=@((Model.Cells[3] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="3" class="m-1 cell">@Model.Cells[3]</button>
+            <button disabled=@((Model.Cells[4] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="4" class="m-1 cell">@Model.Cells[4]</button>
+            <button disabled=@((Model.Cells[5] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="5" class="m-1 cell">@Model.Cells[5]</button>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <button disabled=@((Model.Cells[6] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="6" class="m-1 cell">@Model.Cells[6]</button>
+            <button disabled=@((Model.Cells[7] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="7" class="m-1 cell">@Model.Cells[7]</button>
+            <button disabled=@((Model.Cells[8] != "" || Model.GameOver) ? "disabled" : null) type="submit" asp-action="PlayTurn" name="CellNum" value="8" class="m-1 cell">@Model.Cells[8]</button>
+        </div>
+    </div>
+        
+</form>
+    
